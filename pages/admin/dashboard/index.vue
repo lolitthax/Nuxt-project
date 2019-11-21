@@ -28,6 +28,14 @@
             <v-list-item-title>Inscritos Hackathon</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+         <v-list-item @click="msg">
+          <v-list-item-action>
+            <v-icon>mdi-tooltip-text</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Mensagens</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
            <v-list-item @click="sair">
           <v-list-item-action>
             <v-icon>mdi-close</v-icon>
@@ -118,6 +126,9 @@
       },
       sair(){
         this.$router.push('/')
+      },
+      msg(){
+        this.$router.push('/admin/usuarios/mensagens')
       }
     }
     

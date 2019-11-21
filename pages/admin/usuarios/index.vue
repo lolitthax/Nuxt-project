@@ -9,6 +9,7 @@
     >
       <template v-slot:top>
         <v-toolbar flat color="white">
+           <v-icon @click="voltar">mdi-arrow-left</v-icon>
           <v-toolbar-title>Usuários</v-toolbar-title>
           <v-spacer />
           <v-btn
@@ -78,7 +79,10 @@ export default {
       dados = dados.filter(u => u.id != item.id)
       this.$ls.set('usuarios', dados)
       this.usuarios = dados
-    }
+    },
+    voltar(){
+        this.$router.push('/admin/dashboard')
+      },
   }
 }
 </script>

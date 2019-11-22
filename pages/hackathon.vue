@@ -259,8 +259,6 @@ export default {
       endereco: "",
       estado: "",
       cidade: "",
-      faculdade: "",
-      curso: "",
       telefone: ""
     };
   },
@@ -307,9 +305,7 @@ export default {
       if (usuario) {
         this.name = usuario.name;
         this.email = usuario.email;
-        this.nascimento = usuario.nascimento;
-        this.faculdade = usuario.faculdade;
-        this.curso = usuario.curso;
+        this.idade = usuario.idade;
         this.endereco = usuario.endereco;
         this.estado = usuario.estado;
         this.cidade = usuario.estado;
@@ -325,17 +321,12 @@ export default {
     },
     salvar() {
       let dados = this.$ls.get("usuarios");
-      this.sucesso = 'Inscrição realizada!'
-      this.$refs.form.reset()
-      // if (this.$refs.form.validate()) {
-      //   this.snackbar = true;
-      //   }
       if (!dados) dados = [];
       dados.push({
         id: this.gerarId(),
         name: this.name,
         email: this.email,
-        idade: this.nascimento,
+        idade: this.idade,
         faculdade: this.faculdade,
         curso: this.curso,
         estado: this.estado,
@@ -344,6 +335,7 @@ export default {
         telefone: this.telefone
       });
       this.$ls.set("usuarios", dados);
+      this.sucesso = 'Inscrição realizada!'
     },
     cancelar() {
       this.$router.push("/admin/usuarios");

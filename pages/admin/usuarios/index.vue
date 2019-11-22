@@ -55,8 +55,6 @@ export default {
         { text: 'Nome completo', value: 'name', sortable:false, width:200 },
         { text: 'E-mail', value: 'email', sortable:false, width:200},
         { text: 'Idade', value: 'idade', sortable:false, width:100 },
-        { text: 'Faculdade', value: 'faculdade', sortable:false, width:100 },
-        { text: 'Curso', value: 'curso' , sortable:false, width:100},
         { text: 'Estado', value: 'estado' , sortable:false, width:100},
         { text: 'Cidade', value: 'cidade' , sortable:false, width:100},
         { text: 'Endereço', value: 'endereco' , sortable:false, width:100},

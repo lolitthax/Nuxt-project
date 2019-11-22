@@ -52,12 +52,12 @@ export default {
   data () {
     return {
       headers: [
-        { text: 'Nome completo', value: 'name', sortable:false, width:200 },
+        { text: 'Nome', value: 'name', sortable:false, width:200 },
         { text: 'E-mail', value: 'email', sortable:false, width:200},
         { text: 'Idade', value: 'idade', sortable:false, width:100 },
         { text: 'Estado', value: 'estado' , sortable:false, width:100},
         { text: 'Cidade', value: 'cidade' , sortable:false, width:100},
-        { text: 'Endereço', value: 'endereco' , sortable:false, width:100},
+        { text: 'Endereço', value: 'endereco' , sortable:false, width:200},
         { text: 'Telefone', value: 'telefone' , sortable:false, width:100},
         { text: 'Ações', value: 'action', sortable: false, width: 100 }
       ],

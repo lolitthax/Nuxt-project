@@ -322,6 +322,7 @@ export default {
     salvar() {
       let dados = this.$ls.get("usuarios");
       if (!dados) dados = [];
+     
       dados.push({
         id: this.gerarId(),
         name: this.name,
@@ -336,6 +337,7 @@ export default {
       });
       this.$ls.set("usuarios", dados);
       this.sucesso = 'Inscrição realizada!'
+       this.$refs.form.reset()
     },
     cancelar() {
       this.$router.push("/admin/usuarios");

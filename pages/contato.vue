@@ -35,6 +35,50 @@ export default {
     AppFooter,
     AppHeader
   },
+   meta: [
+      { name: 'authors', content: 'Aline Iasmim, Daphne Helena, Luís Fante, José Airton, Priscila Agda' }
+    ],
+    meta: [
+      { name: 'description', content: 'Fale com o Patrício, o Ornitorrinco nosso suporte que ama ler mensagens!' }
+    ],
+    meta: [
+      { name: 'keywords', content: 'Doctype, Hackathon Doctype, Aline Iasmim, Daphne Helena, Priscila Agda, José Airton, Luís Fante, Desenvolvimento de Apps ,Acessibilidade, Criação de Sites, Webdesign, SEO, Inteligência Artificial, Hackathon em Taquaritinga, Hackathon 2019, Empresas de Desenvolvimento em Taquaritinga.' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+  metaInfo: {
+    meta: [
+     
+      // OpenGraph data (Most widely used)
+      {property: 'og:title', content: 'Contato | Doctype'},
+      {property: 'og:site_name', content: 'Doctype'},
+      // The list of types is available here: http://ogp.me/#types
+      {property: 'og:type', content: 'website'},
+      // Should the the same as your canonical link, see below.
+      {property: 'og:url', content: 'http://localhost:3000/contato'},
+      {property: 'og:image', content: 'http://localhost:3000/espaco-hackathon.jpg'},
+      // Often the same as your meta description, but not always.
+      {property: 'og:description', content: 'Fale com o Patrício, o Ornitorrinco nosso suporte que ama ler mensagens!'},
+  
+      // Twitter card
+      {name: 'twitter:card', content: 'summary'},
+      {name: 'twitter:site', content: 'http://localhost:3000/contato'},
+      {name: 'twitter:title', content: 'Início | Doctype'},
+      {name: 'twitter:description', content: 'Fale com o Patrício, o Ornitorrinco nosso suporte que ama ler mensagens!'},
+      // Your twitter handle, if you have one.
+      {name: 'twitter:creator', content: '@PatricioDoctype'},
+      {name: 'twitter:image:src', content: 'http://localhost:3000/planetas-hackathon.jpg'},
+  
+      // Google / Schema.org markup:
+      {itemprop: 'name', content: 'Contato | Doctype'},
+      {itemprop: 'description', content: 'Fale com o Patrício, o Ornitorrinco nosso suporte que ama ler mensagens!'},
+      {itemprop: 'image', content: 'http://localhost:3000/espaco-hackathon.jpg'}
+    ],
+    link: [
+      {rel: 'canonical', href: 'http://localhost:3000//Doctype'}
+    ]
+  },
   data() {
     return {
       id: this.$route.params.id,
@@ -89,6 +133,7 @@ export default {
       });
       this.$ls.set("mensagem", dados);
       this.sucesso = 'Sua mensagem foi enviada com êxito!'
+       this.$refs.form.reset()
     },
   }
 };

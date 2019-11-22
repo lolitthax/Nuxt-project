@@ -34,21 +34,6 @@
           required>
           </v-text-field>
 
-          <v-text-field 
-          v-model="faculdade" 
-          :rules="faculdadeRules" 
-          label="Faculdade" 
-          color="purple darken-4"
-          required>
-          </v-text-field>
-
-          <v-text-field 
-          v-model="curso" 
-          :rules="cursoRules" 
-          label="Curso" 
-          color="purple darken-4"
-          required>
-          </v-text-field>
 
           <v-text-field 
           v-model="estado" 
@@ -109,8 +94,7 @@ export default {
       name: '',
       email: '',
       idade:'',
-      faculdade:'',
-      curso:'',
+    
       endereco:'',
       estado:'',
       cidade:'',
@@ -138,8 +122,6 @@ export default {
         this.name = usuario.name
         this.email = usuario.email
         this.idade = usuario.idade
-        this.faculdade = usuario.faculdade
-        this.curso = usuario.curso
         this.endereco = usuario.endereco
         this.estado = usuario.estado
         this.cidade = usuario.estado

@@ -69,6 +69,8 @@ body {
 }
   .titulo-parallax {
     font-size: $Título;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.253); 
   }
 
 .servicos-section {

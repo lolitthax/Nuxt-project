@@ -15,9 +15,10 @@
 
           <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
 
-          <v-text-field v-model="mensagem" :rules="mensagemRules" label="Mensagem" required></v-text-field>
+          <v-text-field v-model="mensage" :rules="mensageRules" label="Mensagem" required></v-text-field>
+
           <v-alert transition="scale-transition" type="success" :value="!!sucesso">{{sucesso}}</v-alert>
-          <v-btn :disabled="!valid" @click="validate" id="button">Enviar</v-btn>
+          <v-btn :disabled="!valid" @click="salvar" id="button">Enviar</v-btn>
         </v-form>
       </v-row>
     </section>
@@ -34,14 +35,24 @@ export default {
     AppFooter,
     AppHeader
   },
+  data() {
+    return {
+      id: this.$route.params.id,
+      modo: this.$route.params.id == "incluir" ? "Incluir" : "Editar",
+      name: "",
+      email: "",
+      mensage:""
+    };
+  },
 
   data: () => ({
     sucesso:"",
     valid: false,
     name: "",
     nameRules: [v => !!v || "O campo Nome é obrigatório"],
-    mensagem: "",
-    mensagemRules: [v => !!v || "O campo Mensagem é obrigatório"],
+
+    mensage: "",
+    mensageRules: [v => !!v || "O campo Mensagem é obrigatório"],
 
     email: "",
     emailRules: [
@@ -50,11 +61,35 @@ export default {
     ]
   }),
 
-  methods: {
-    validate() {
-      this.sucesso = 'Sua mensagem foi enviada com êxito!'
-      this.$refs.form.reset()
+  created() {
+    const mensagem = this.$ls.get("mensagem");
+    if (mensagem) {
+      const mensa = mensagem.find(u => u.id == this.id);
+      if (mensa) {
+        this.name = mensa.name;
+        this.email = mensa.email;
+        this.mensage = mensa.mensage;
+      }
     }
+  },
+
+  methods: {
+    gerarId() {
+      return Math.round(Math.random() * 9999);
+    },
+    salvar() {
+      let dados = this.$ls.get("mensagem");
+      if (!dados) dados = [];
+      dados.push({
+        id: this.gerarId(),
+        name: this.name,
+        email: this.email,
+        mensage: this.mensage
+        
+      });
+      this.$ls.set("mensagem", dados);
+      this.sucesso = 'Sua mensagem foi enviada com êxito!'
+    },
   }
 };
 </script>

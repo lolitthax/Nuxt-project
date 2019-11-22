@@ -3,7 +3,7 @@
     
     <v-data-table 
       :headers="headers"
-      :items="usuarios"
+      :items="mensagem"
       sort-by="nome"
       class="elevation-1"
       :hide-default-footer="true"
@@ -14,30 +14,13 @@
           <v-toolbar-title>Caixa de mensagens</v-toolbar-title>
          
           <v-spacer />
-          
-          <!-- <v-btn
-            color="primary"
-            to="/admin/usuarios/incluir"
-            class="elevation-1"
-            small
-            fab
-          >
-            <v-icon>mdi-plus</v-icon>
-          </v-btn> -->
         </v-toolbar>
       </template>
       <template v-slot:item.action="{ item }"
       class="text-justify"
       >
         <v-icon
-          color="primary"
-          class="mr-2"
-          @click="editar(item)"
-        >
-          mdi-pencil
-        </v-icon>
-        <v-icon
-          color="pink"
+          color="red"
           @click="excluir(item)"
         >
           mdi-delete
@@ -57,30 +40,23 @@ export default {
       headers: [
         { text: 'Nome ', value: 'name', sortable:false, width:400 },
         { text: 'E-mail', value: 'email', sortable:false, width:400},
-        { text: 'Mensagem', value: 'idade', sortable:false, width:400 },
-        // { text: 'Faculdade', value: 'faculdade', sortable:false, width:100 },
-        // { text: 'Curso', value: 'curso' , sortable:false, width:100},
-        // { text: 'Estado', value: 'estado' , sortable:false, width:100},
-        // { text: 'Cidade', value: 'cidade' , sortable:false, width:100},
-        // { text: 'Endereço', value: 'endereco' , sortable:false, width:100},
-        // { text: 'Telefone', value: 'telefone' , sortable:false, width:100},
-        // { text: 'Ações', value: 'action', sortable: false, width: 100 }
+        { text: 'Mensagem', value: 'mensage', sortable:false, width:400 },
       ],
-      usuarios: []
+      mensagem: []
     }
   },
   created () {
-    const usuarios = this.$ls.get('usuarios')
-    if (usuarios) this.usuarios = usuarios
+    const mensagem = this.$ls.get('mensagem')
+    if (mensagem) this.mensagem = mensagem
   },
   methods: {
     editar (item) {
-      this.$router.push(`/admin/usuarios/${item.id}`)
+      this.$router.push(`/admin/usuarios/mensagens${item.id}`)
     },
     excluir (item) {
-      let dados = this.$ls.get('usuarios')
+      let dados = this.$ls.get('mensagem')
       dados = dados.filter(u => u.id != item.id)
-      this.$ls.set('usuarios', dados)
+      this.$ls.set('mensagem', dados)
       this.usuarios = dados
     },
       sair(){

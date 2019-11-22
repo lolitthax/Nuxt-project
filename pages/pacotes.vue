@@ -1,7 +1,15 @@
 <template>
     <div>
         <app-header/>
-      
+       <v-parallax
+      title="Anúncio do Hackathon"
+      dark
+      :src="require('assets/pacotes.jpg')"
+      alt="imagem contendo ilustração de planetas e estrelas"
+    >
+      <h1 class="text-center titulo-parallax">{Pacotes}</h1>
+      <h4 class="text-center sub-parallax">Rápido, prático e funcional!</h4>
+    </v-parallax>
     <section title="Pacotes Web">
         <h2 class="section-titulo">{Pacotes Web}</h2>
         <p class="texto"> 

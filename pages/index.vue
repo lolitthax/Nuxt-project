@@ -4,7 +4,7 @@
     <app-header/>
     <!-- parallax -->
      <v-parallax title="Anúncio do Hackathon"
-        :src="require('assets/planetas-hackathon.jpg')"
+        :src="require('assets/planetas-hackathonnn.jpg')"
         alt="imagem contendo ilustração de planetas e estrelas"
       >
       <h1 class=" text-center titulo-parallax">#HACKATHON &lt;!DOCTYPE&gt;</h1>
@@ -135,7 +135,7 @@
      <!--parallax -->
        <v-parallax title="Anúncio do portifólio do projeto"
          dark
-        :src="require('assets/planetas-hackathon.jpg')" alt="imagem contendo ilustração de planetas e estrelas"
+        :src="require('assets/planetas-hackathonnn.jpg')" alt="imagem contendo ilustração de planetas e estrelas"
        >
        <h2 class=" text-center titulo-parallax">Não deixe o portal fechar!</h2>
       <h3 class="text-center sub-parallax ">Faça seu passaporte!</h3>

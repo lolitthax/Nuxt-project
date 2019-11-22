@@ -11,7 +11,7 @@
             title="<!DOCTYPE>"
           />
         </a>
-           <app-acess/>
+           <!-- <app-acess/> -->
         <input type="checkbox" id="chk" />
         <label for="chk" class="mostra-menu-btn">
        <v-icon large>mdi-menu</v-icon>
@@ -34,12 +34,12 @@
   </div>
 </template>
 <script>
- import AppAcess from './AppAcess'
+//  import AppAcess from './AppAcess'
   
 export default {
-  components:{
-    AppAcess,
-  }
+  // components:{
+  //   AppAcess,
+  // }
 }
 </script>
 <style scoped>
